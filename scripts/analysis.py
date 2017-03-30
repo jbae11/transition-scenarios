@@ -254,13 +254,13 @@ def isotope_mass_time_array(resources, compositions):
 
     for res in resources:
         for com in compositions:
-            res_qualid = res[7]
+            res_qualid = res[2]
             comp_qualid = com[1]
             if res_qualid == comp_qualid:
                 nucid = com[2]
                 mass_frac = com[3]
-                mass_waste = res[5]
-                res_time = res[16]
+                mass_waste = res[0]
+                res_time = res[1]
                 temp_isotope.append(nucid)
                 temp_mass.append(mass_frac*mass_waste) 
                 time_array.append(res_time)
@@ -268,7 +268,7 @@ def isotope_mass_time_array(resources, compositions):
     return temp_isotope, temp_mass, time_array
 
 
-def plot_in_out_flux(cursor, facility, influx_bool, title, outputname):
+def plot_in_out_flux(cursor, facility, influx_bool, title, outputname, multi_line_bool):
     """plots timeseries outflux from facility name in kg.
 
     Parameters
@@ -284,6 +284,9 @@ def plot_in_out_flux(cursor, facility, influx_bool, title, outputname):
         title of the multi line plot
     outputname: str
         filename of the multi line plot file
+    multi_line_bool: bool
+        creates multi-line plot if true,
+        stacked bar chart if false.
 
     Returns
     -------
@@ -292,26 +295,30 @@ def plot_in_out_flux(cursor, facility, influx_bool, title, outputname):
 
     cur = cursor
     agent_ids = get_agent_ids(cur, facility)
-    print(agent_ids)
-    print(exec_string(agent_ids, 'transactions.senderid', '*'))
     if influx_bool is True:
         resources = cur.execute(exec_string(agent_ids,
                                             'transactions.receiverId',
-                                            '*')).fetchall()
+                                            'sum(quantity), time, qualid') + ' GROUP BY time, qualid').fetchall()
     else:
         resources = cur.execute(exec_string(agent_ids,
                                             'transactions.senderId',
-                                            '*')).fetchall()
+                                            'sum(quantity), time, qualid') + ' GROUP BY time, qualid').fetchall()
     compositions = cur.execute('SELECT * FROM compositions').fetchall()
     sim_time, timestep = get_sim_time_duration(cur)
+    # isotope, mass, time_array = isotope_mass_time_array(resources, compositions)
     isotope, mass, time_array = isotope_mass_time_array(resources, compositions)
-
     waste_dict = get_waste_dict(isotope, mass, time_array, sim_time)
 
-    multi_line_plot(waste_dict, timestep,
-                    'Years', 'Mass [kg]',
-                    title, outputname)
+    if multi_line_bool is True:
+        multi_line_plot(waste_dict, timestep,
+                        'Years', 'Mass [kg]',
+                        title, outputname)
+    else:
+        stacked_bar_chart(waste_dict, timestep,
+                          'Years', 'Mass [kg]',
+                           title, outputname)
 
+   
 
 def get_waste_dict(isotope_array, mass_array, time_array, sim_time):
     """Given an isotope, mass and time array, creates a dictionary
@@ -475,7 +482,10 @@ def stacked_bar_chart(dictionary, timestep, xlabel, ylabel, title, outputname):
     plot_array = []
     # for every country, create bar chart with different color
     for key in dictionary:
-        label = key.replace('_government', '')
+        if type(key) == str:
+            label = key.replace('_government', '')
+        elif type(key) == int:
+            label = str(nucname.name(key))
         # very first country does not have a 'bottom' argument
         if top_index is True:
             plot = plt.bar(1950+(timestep/12), dictionary[key], .5,
@@ -558,7 +568,7 @@ if __name__ == "__main__":
         cur = con.cursor()
         # print(snf(cur))
         # plot_power(cur)
-        plot_in_out_flux(cur, 'source', False, 'source vs time', 'source vs time')
+        plot_in_out_flux(cur, 'source', False, 'source vs time', 'source vs time', False)
         plt.figure()
-        plot_in_out_flux(cur, 'sink', True, 'isotope vs time', 'isotope vs time')
+        plot_in_out_flux(cur, 'sink', True, 'isotope vs time', 'isotope vs time', True)
   
