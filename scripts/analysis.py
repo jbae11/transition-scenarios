@@ -36,7 +36,8 @@ def snf(cursor):
     # get array of sum(quantity) and qualid for snf
     snf_inventory = cur.execute(exec_string(sink_id,
                                             'transactions.receiverId',
-                                            'sum(quantity), qualid') + ' group by qualid').fetchall()
+                                            'sum(quantity), qualid')
+                                + ' group by qualid').fetchall()
     waste_id = get_waste_id(resources)
     inven = isotope_calc(waste_id, snf_inventory, cur)
     return inven
@@ -62,7 +63,8 @@ def get_agent_ids(cursor, facility):
 
     cur = cursor
     agent_id = []
-    agent = cur.execute("select * from agententry where spec like '%" + facility + "%'").fetchall()
+    agent = cur.execute("select * from agententry where spec like '%"
+                        + facility + "%'").fetchall()
 
     for ag in agent:
         agent_id.append(ag[1])
@@ -138,7 +140,6 @@ def get_sum(array, column_index):
         sum += ar[column_index]
 
     return sum
-
 
 
 def isotope_calc(wasteid_array, snf_inventory, cursor):
@@ -441,15 +442,15 @@ def multi_line_plot(dictionary, timestep, xlabel, ylabel, title, outputname):
         # label is the name of the nuclide (converted from ZZAAA0000 format)
         label =  str(nucname.name(key))
         plt.semilogy(1950 + (timestep/12), dictionary[key],
-                 color=cm.viridis(1.*color_index/len(dictionary)),
-                 label=label)
+                     color=cm.viridis(1.*color_index/len(dictionary)),
+                     label=label)
         color_index += 1
 
     # plot
     plt.ylabel(ylabel)
     plt.title(title)
     plt.xlabel(xlabel)
-    plt.legend(loc=(1.0,0), prop={'size':10})
+    plt.legend(loc=(1.0, 0), prop={'size':10})
     plt.grid(True)
     plt.savefig(outputname, format='png', bbox_inches='tight')
 
@@ -506,7 +507,7 @@ def stacked_bar_chart(dictionary, timestep, xlabel, ylabel, title, outputname):
     plt.ylabel(ylabel)
     plt.title(title)
     plt.xlabel(xlabel)
-    plt.legend(loc=(1.0,0))
+    plt.legend(loc=(1.0, 0))
     plt.grid(True)
     plt.savefig(outputname, format='png', bbox_inches='tight')
 
@@ -560,7 +561,6 @@ def plot_power(cursor):
                       'Number of Reactors vs Time', 'number_plot.png')
 
 
-
 if __name__ == "__main__":
     file = sys.argv[1]
     con = lite.connect(file)
@@ -568,7 +568,10 @@ if __name__ == "__main__":
         cur = con.cursor()
         # print(snf(cur))
         # plot_power(cur)
-        plot_in_out_flux(cur, 'source', False, 'source vs time', 'source vs time', False)
+        plot_in_out_flux(cur, 'source', False,
+                         'source vs time',
+                         'source vs time', False)
         plt.figure()
-        plot_in_out_flux(cur, 'sink', True, 'isotope vs time', 'isotope vs time', True)
-  
+        plot_in_out_flux(cur, 'sink', True,
+                         'isotope vs time',
+                         'isotope vs time', True)
