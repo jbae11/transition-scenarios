@@ -870,6 +870,42 @@ def where_comm(cur, commodity, prototypes, is_cum=True):
     return trade_dict
 
 
+def commod_per_inst(cur, commodity):
+    """ Outputs outflux of commodity per institution
+
+    Parameters
+    ----------
+    cur: sqlite cursor
+        sqlite cursor
+    commodity: str
+        commodity to search for
+
+    Returns
+    -------
+    inst_output_dict: dictionary
+        key = institution 
+        value = timeseries list of outflux of commodity
+    """
+
+    institutions = get_inst(cur)
+    inst_output_dict = collections.OrderedDict()
+    for inst in institutions:
+        inst_id = inst[1]
+        inst_name = inst[0]
+        facilities = cur.execute('SELECT agentid FROM agententry '
+                                 'WHERE parentid = ' + str(inst_id))
+        facilities_list = []
+        for fac in facilities_list:
+            list.append(fac[0])
+        query = exec_string(list, 'senderid', 'sum(quantity)')
+        query += ' AND commodity = "' + commodity +'"'
+        inst_output_dict[inst_name] = cur.execute(query).fetchone()[0]
+
+    return inst_output_dict
+
+
+
+
 def get_waste_dict(isotope_list, mass_list, time_list, duration):
     """Given an isotope, mass and time list, creates a dictionary
        With key as isotope and time series of the isotope mass.
