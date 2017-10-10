@@ -893,11 +893,11 @@ def commod_per_inst(cur, commodity):
         inst_id = inst[1]
         inst_name = inst[0]
         facilities = cur.execute('SELECT agentid FROM agententry '
-                                 'WHERE parentid = ' + str(inst_id))
+                                 'WHERE parentid = ' + str(inst_id)).fetchall()
         facilities_list = []
-        for fac in facilities_list:
-            list.append(fac[0])
-        query = exec_string(list, 'senderid', 'sum(quantity)')
+        for fac in facilities:
+            facilities_list.append(fac[0])
+        query = exec_string(facilities_list, 'senderid', 'sum(quantity)')
         query += ' AND commodity = "' + commodity +'"'
         inst_output_dict[inst_name] = cur.execute(query).fetchone()[0]
 
