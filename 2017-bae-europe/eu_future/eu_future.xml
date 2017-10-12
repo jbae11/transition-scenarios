@@ -110,7 +110,7 @@
        <feed_commods>   <val>french_uox_waste</val> </feed_commods>
        <feed_commod_prefs> <val>1.0</val> </feed_commod_prefs>
        <feed_recipe>uox_used_fuel_recipe</feed_recipe>
-       <feedbuf_size>91600</feedbuf_size>
+       <feedbuf_size>45800</feedbuf_size>
        <!-- 1100 tons/year 91.6 tons/timestep --> 
        <throughput>91600</throughput>
        <leftover_commod>raffinate</leftover_commod>
@@ -130,7 +130,7 @@
         <item>
           <commod>uox_U</commod>
           <info>
-            <buf_size>91600</buf_size>
+            <buf_size>9160</buf_size>
             <efficiencies>
               <item>
                 <comp>U</comp> <eff>0.998</eff>
@@ -4652,7 +4652,7 @@
           <prototypes>
 <val>MELOX</val>
 <val>uox_reprocessing</val>
-<val>mox_reprocessing</val>
+
   <val>CHINON A-2</val>
 <val>CHINON A-3</val>
 <val>CHOOZ-A (ARDENNES)</val>
@@ -4723,7 +4723,7 @@
 <build_times>
 <val>300</val>
 <val>72</val>
-<val>72</val>
+
   <val>1</val>
 <val>1</val>
 <val>1</val>
@@ -4794,7 +4794,7 @@
 <n_build>
   <val>1</val>
 <val>1</val>
-<val>1</val>
+
 <val>1</val>
 <val>1</val>
 <val>1</val>
@@ -4865,7 +4865,7 @@
 <lifetimes>
   <val>9999</val>
 <val>9999</val>
-<val>9999</val>
+
   <val>161</val>
 <val>245</val>
 <val>262</val>
