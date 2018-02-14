@@ -864,7 +864,7 @@ def where_comm(cur, commodity, prototypes, is_cum=True):
     return trade_dict
 
 
-def commod_per_inst(cur, commodity, timestep):
+def commod_per_inst(cur, commodity, timestep=100000):
     """ Outputs outflux of commodity per institution
         before timestep
 
