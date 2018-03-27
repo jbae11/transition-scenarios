@@ -252,4 +252,3 @@ def test_capacity_calc():
     for key in power_dict:
         assert np.array_equal(
             power_dict[key], answer_power[key]) == True
-
