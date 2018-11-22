@@ -345,7 +345,7 @@
         <in_commods>
           <val>french_uox_waste</val>
         </in_commods>
-        <residence_time>72</residence_time>
+        <residence_time>36</residence_time>
         <max_inv_size>1e299</max_inv_size>
         <out_commods>
           <val>cooled_french_uox_waste</val>
@@ -376,7 +376,7 @@
         <in_commods>
           <val>uox_waste</val>
         </in_commods>
-        <residence_time>72</residence_time>
+        <residence_time>36</residence_time>
         <out_commods>
           <val>cooled_uox_waste</val>
         </out_commods>
@@ -5523,6 +5523,54 @@
     <val>astrid</val>
     <val>astrid</val>
 
+     <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+    <val>astrid</val>
+
 </prototypes>
 <build_times>
     <val>1</val>
@@ -5640,6 +5688,57 @@
     <val>1115</val>
     <val>1139</val>
     <val>1344</val>
+
+    <val>   1800    </val>
+<val>   1826    </val>
+<val>   1830    </val>
+<val>   1840    </val>
+<val>   1844    </val>
+<val>   1850    </val>
+<val>   1854    </val>
+<val>   1862    </val>
+<val>   1867    </val>
+<val>   1871    </val>
+<val>   1872    </val>
+<val>   1873    </val>
+<val>   1876    </val>
+<val>   1877    </val>
+<val>   1879    </val>
+<val>   1890    </val>
+<val>   1894    </val>
+<val>   1899    </val>
+<val>   1900    </val>
+<val>   1903    </val>
+<val>   1905    </val>
+<val>   1911    </val>
+<val>   1912    </val>
+<val>   1915    </val>
+<val>   1917    </val>
+<val>   1927    </val>
+<val>   1929    </val>
+<val>   1935    </val>
+<val>   1937    </val>
+<val>   1941    </val>
+<val>   1942    </val>
+<val>   1951    </val>
+<val>   1952    </val>
+<val>   1953    </val>
+<val>   1961    </val>
+<val>   1965    </val>
+<val>   1981    </val>
+<val>   1983    </val>
+<val>   1984    </val>
+<val>   1996    </val>
+<val>   2004    </val>
+<val>   2021    </val>
+<val>   2059    </val>
+<val>   2066    </val>
+<val>   2075    </val>
+<val>   2099    </val>
+<val>   2304    </val>
+
+
+
 </build_times>
 <n_build>
 
@@ -5712,6 +5811,54 @@
 <val>1</val>
 
  <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>4</val>
+    <val>3</val>
+    <val>5</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>5</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>1</val>
+    <val>2</val>
+    <val>2</val>
+    <val>5</val>
+    <val>2</val>
+    <val>6</val>
+    <val>2</val>
+    <val>2</val>
+    <val>5</val>
+    <val>1</val>
+    <val>2</val>
+    <val>3</val>
+    <val>5</val>
+    <val>1</val>
+    <val>2</val>
+    <val>2</val>
+    <val>2</val>
+    <val>2</val>
+    <val>3</val>
+    <val>2</val>
+    <val>2</val>
+    <val>2</val>
+    <val>3</val>
+    <val>2</val>
+    <val>2</val>
+    <val>3</val>
+    <val>3</val>
+
+    <val>2</val>
     <val>1</val>
     <val>2</val>
     <val>1</val>
@@ -5833,6 +5980,54 @@
 <val>780</val>
 
 <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+    <val>960</val>
+
+    <val>960</val>
     <val>960</val>
     <val>960</val>
     <val>960</val>
@@ -6465,23 +6660,13 @@
     <nuclide> <id>U238</id> <comp>99.289</comp> </nuclide>
   </recipe>
 
-
-<recipe>
-  <name>uox_fuel_recipe</name>
-  <basis>mass</basis>
-  <nuclide>
-    <id>U234</id>
-    <comp>0.0003439849</comp>
-  </nuclide>
-  <nuclide>
-    <id>U235</id>
-    <comp>0.0429981081</comp>
-  </nuclide>
-  <nuclide>
-    <id>U238</id>
-    <comp>0.9566579071</comp>
-  </nuclide>
-</recipe> 
+  <recipe>
+    <name>uox_fuel_recipe</name>
+    <basis>mass</basis>
+     <nuclide> <id>U234</id>  <comp>0.0002558883</comp> </nuclide> 
+     <nuclide> <id>U235</id>  <comp>0.0319885317</comp> </nuclide> 
+     <nuclide> <id>U238</id>  <comp>0.96775558</comp> </nuclide> 
+  </recipe> 
 
   <recipe>
     <name>depleted_u</name>
